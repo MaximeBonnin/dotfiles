@@ -56,7 +56,8 @@ button:hover {
 
 #pulseaudio,
 #clock,
-#battery,
+#bluetooth,
+#mpris,
 #cpu,
 #memory,
 #disk,
@@ -73,27 +74,10 @@ button:hover {
   margin-right: 4px;
   padding-left: 4px;
   padding-right: 4px;
+	color: @secondary;
+    	border-bottom: 2px solid @secondary;
 }
 
-#clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
-}
-
-#clock.date {
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
-}
-
-#pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
-}
-
-#network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
-}
 
 #idle_inhibitor {
     margin-right: 12px;
