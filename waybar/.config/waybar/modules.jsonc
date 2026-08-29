@@ -104,8 +104,8 @@
         "cursor": true
     },
     "tray": {
-        "icon-size": 13,
-        "spacing": 12,
+        "icon-size": 20,
+        "spacing": 18,
         "cursor": true
     },
     "power-profiles-daemon": {

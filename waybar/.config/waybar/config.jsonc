@@ -1,8 +1,8 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "margin": "6 8 0 8",
+    "height": 45,
+    "margin": "9 12 0 12",
 
     "modules-left": ["group/left"],
     "modules-center": ["clock"],
