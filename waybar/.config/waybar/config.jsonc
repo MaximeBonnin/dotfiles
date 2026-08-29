@@ -7,8 +7,8 @@
   	"hyprland/workspaces"
   ],
   "modules-right": [
-	 "pulseaudio", 
 	 "mpris", 
+	 "pulseaudio", 
 	 "network", 
 	 "bluetooth", 
 	 "clock" 
@@ -18,11 +18,11 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>",
     "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+    "tooltip-format-wifi": "{essid} - Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
@@ -36,7 +36,7 @@
 	"bluetooth": {
 	  "format": " {status}",
 	  "format-disabled": " off",
-	  "format-connected": " {device_alias}",
+	  "format-connected": "",
 	  "tooltip": true,
 	  "on-click": "blueman-manager",
 	  "tooltip-format": "{controller_alias}\n{device_alias}"
