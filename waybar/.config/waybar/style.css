@@ -42,7 +42,6 @@
 #pulseaudio,
 #power-profiles-daemon,
 #custom-ctlcenter,
-#custom-arrow-left,
 #network {
     font-size: 22px;
 }
@@ -60,7 +59,7 @@
 
 #right,
 #left,
-#right-hidden-top,
+#right-secondary,
 #clock {
     padding: 0 15px;
     border-radius: 15px;
@@ -68,7 +67,7 @@
     border: 1px solid @border;
 }
 
-#right-hidden-top {
+#right-secondary {
     padding: 0 12px;
 }
 

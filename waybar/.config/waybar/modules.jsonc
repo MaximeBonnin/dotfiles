@@ -16,25 +16,19 @@
             "tray"
         ]
     },
-    "group/right-hidden": {
+    "group/stats": {
         "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 500,
-            "transition-left-to-right": true,
-            "click-to-reveal": true
-        },
         "modules": [
-            "custom/arrow-left",
             "cpu",
             "memory",
             "temperature",
             "load"
         ]
     },
-    "group/right-hidden-top": {
+    "group/right-secondary": {
         "orientation": "horizontal",
         "modules": [
-            "group/right-hidden",
+            "group/stats",
             "power-profiles-daemon",
             "custom/ctlcenter"
         ]
@@ -220,10 +214,5 @@
             "action-1": "kvantummanager",
             "action-2": "hyprctl reload"
         }
-    },
-    "custom/arrow-left": {
-        "format": "",
-        "tooltip": false,
-        "cursor": true
     }
 }
