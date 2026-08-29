@@ -1,111 +1,182 @@
-@import "mocha.css"; 
+@import "colors/tokyonight.css";
 
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 16px;
-    min-height: 0;
+    font-size: 15px;
     font-weight: bold;
-}
-
-window#waybar {
-    background: transparent;
-    background-color: @crust;
-    color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
-}
-
-#window {
-    margin: 8px;
-    padding-left: 8;
-    padding-right: 8;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
     border: none;
     border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
 }
 
-button:hover {
-    background: inherit;
-    color: @mauve;
-    border-top: 2px solid @mauve;
+#waybar {
+    background: transparent;
+    color: @fg;
 }
 
-#workspaces button {
-    padding: 0 4px;
-}
-
-#workspaces button.focused {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @rosewater;
-    border-top: 2px solid @rosewater;
-}
-
-#workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @mauve;
-    border-top: 2px solid @mauve;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#pulseaudio,
-#clock,
+#temperature,
 #bluetooth,
 #mpris,
+#window,
 #cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
+#load {
+    padding: 1px 7px;
+}
+
 #network,
-#mode,
-#scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-	color: @secondary;
-    	border-bottom: 2px solid @secondary;
+#tray {
+    padding: 1px 6px;
 }
 
-
-#idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
+#pulseaudio {
+    padding: 1px 8px 1px 4px;
 }
 
-#idle_inhibitor.activated {
+#pulseaudio-slider {
+    padding: 0 7px 0 2px;
+}
+
+#workspaces,
+#bluetooth,
+#memory,
+#temperature,
+#cpu,
+#mpris,
+#window,
+#load {
+    margin: 0 3px;
+}
+
+#right,
+#left,
+#right-hidden-top,
+#clock {
+    padding: 2px 10px;
+    border-radius: 15px;
+    background: @module-bg;
+    border: 1px solid @border;
+}
+
+#right-hidden-top {
+    padding: 0 12px;
+}
+
+#right, #left {
+    margin: 0 8px;
+}
+
+#clock {
+    padding: 2px 18px;
+}
+
+#custom-ctlcenter {
+    margin-left: 7px;
+    color: @blue;
+}
+
+#power-profiles-daemon {
+    margin-right: 7px;
+}
+
+#cpu.critical,
+#memory.critical,
+#network.disabled,
+#temperature.critical,
+#network.disconnected,
+#power-profiles-daemon.performance {
     color: @red;
 }
 
-#battery {
+#cpu.warning,
+#memory.warning,
+#temperature.warning {
+    color: @yellow;
+    background: unset;
+}
+
+#power-profiles-daemon.power-saver {
     color: @green;
-    border-bottom: 2px solid @green;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
+#workspaces button {
+    color: @workspace-fg;
+    font-size: 14px;
+    border-radius: 100%;
+    padding: 0 2px;
+    margin: 0 3px;
+    min-width: 16px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
+#workspaces button:hover {
+    background: transparent;
 }
 
-#custom-vpn {
-    color: @lavender;
+#mpris.paused {
+    color: @inactive;
+}
+
+/* ---<==== Misc ====>--- */
+
+tooltip,
+tooltip.background {
+    background-image: none;
     border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
+    background: @tooltip-bg;
+    box-shadow: none;
+}
+
+tooltip {
+    border: 1px solid @border;
+}
+
+tooltip label {
+    padding: 3px 10px;
+    color: @fg;
+    font-weight: 700;
+}
+
+.popup * {
+    box-shadow: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+menu {
+    border-radius: 10px;
+    font-weight: 700;
+    color: @fg;
+    background: @tooltip-bg;
+    border: 1px solid @border;
+}
+
+menu > * {
+    padding: 3px 0px;
+}
+
+menu > *:hover {
+    border-radius: 10px;
+    background-color: @highlight;
+}
+
+/* Sliders */
+
+slider {
+    opacity: 0;
+    box-shadow: none;
+}
+
+trough {
+    min-width: 50px;
+    min-height: 5px;
+    border-radius: 8px;
+    background: @inactive;
+}
+
+trough highlight {
+    border-radius: 8px;
+    background-color: @fg;
+    background-image: none;
 }
