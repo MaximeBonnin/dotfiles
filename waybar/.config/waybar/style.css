@@ -2,7 +2,7 @@
 
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold;
     border: none;
     border-radius: 0;
@@ -23,20 +23,28 @@
 #window,
 #cpu,
 #load {
-    padding: 2px 11px;
+    padding: 1px 7px;
 }
 
 #network,
 #tray {
-    padding: 2px 9px;
+    padding: 0 6px;
 }
 
 #pulseaudio {
-    padding: 2px 12px 2px 6px;
+    padding: 0 8px 0 4px;
 }
 
 #pulseaudio-slider {
-    padding: 0 11px 0 3px;
+    padding: 0 7px 0 2px;
+}
+
+#pulseaudio,
+#power-profiles-daemon,
+#custom-ctlcenter,
+#custom-arrow-left,
+#network {
+    font-size: 22px;
 }
 
 #workspaces,
@@ -54,31 +62,31 @@
 #left,
 #right-hidden-top,
 #clock {
-    padding: 3px 15px;
-    border-radius: 22px;
+    padding: 0 15px;
+    border-radius: 15px;
     background: @module-bg;
     border: 1px solid @border;
 }
 
 #right-hidden-top {
-    padding: 0 18px;
+    padding: 0 12px;
 }
 
 #right, #left {
-    margin: 0 12px;
+    margin: 0 8px;
 }
 
 #clock {
-    padding: 3px 27px;
+    padding: 1px 18px;
 }
 
 #custom-ctlcenter {
-    margin-left: 11px;
+    margin-left: 7px;
     color: @blue;
 }
 
 #power-profiles-daemon {
-    margin-right: 11px;
+    margin-right: 7px;
 }
 
 #cpu.critical,
@@ -105,8 +113,8 @@
     color: @workspace-fg;
     font-size: 21px;
     border-radius: 100%;
-    padding: 0 3px;
-    margin: 0 4px;
+    padding: 0 2px;
+    margin: 0 3px;
     min-width: 24px;
 }
 
