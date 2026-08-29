@@ -1,7 +1,7 @@
 @import "colors/tokyonight.css";
 
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-family: "MesloLGS Nerd Font Mono";
     font-size: 15px;
     font-weight: bold;
     border: none;
@@ -23,7 +23,7 @@
 #window,
 #cpu,
 #load {
-    padding: 1px 7px;
+    padding: 0px 7px;
 }
 
 #network,

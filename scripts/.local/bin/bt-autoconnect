@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Power on the bluetooth adapter and try to reconnect to a paired device
+# at session start, in priority order (most-used device first).
+
+bluetoothctl power on >/dev/null 2>&1
+
+devices=(
+    "DOQAUS CARE 1"
+    "SoundCore 2"
+    "SoundCore mini"
+)
+
+for attempt in 1 2 3; do
+    for name in "${devices[@]}"; do
+        mac=$(bluetoothctl devices | grep -F "$name" | awk '{print $2}')
+        [ -n "$mac" ] || continue
+        if bluetoothctl info "$mac" | grep -q "Connected: yes"; then
+            exit 0
+        fi
+        if bluetoothctl connect "$mac" >/dev/null 2>&1; then
+            exit 0
+        fi
+    done
+    sleep 3
+done
