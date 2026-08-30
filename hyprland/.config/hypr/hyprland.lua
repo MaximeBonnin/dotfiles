@@ -22,7 +22,7 @@ hl.monitor({ output = "DP-1",     mode = "preferred", position = "auto", scale =
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "nautilus"
 local menu        = "wofi"
 
 
