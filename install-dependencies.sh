@@ -11,6 +11,7 @@ CORE=(
   github-cli     # gh
   stow
   x11-ssh-askpass  # ssh-askpass, needed for GUI passphrase prompts (e.g. VS Code, git GUI push)
+  zsh
 )
 
 # --- terminal & editor -----------------------------------------------------

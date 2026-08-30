@@ -24,29 +24,35 @@ PACKAGES=(
   zshrc
 )
 
-if ! command -v stow >/dev/null 2>&1; then
-  echo "==> GNU Stow not found, installing it (requires sudo)"
-  sudo pacman -S --needed stow
-fi
+echo "==> Installing dependencies"
+"$DOTFILES_DIR/install-dependencies.sh"
 
 backup_conflicts() {
   local pkg="$1"
   local pkg_dir="$DOTFILES_DIR/$pkg"
-  local rel target backed_up=0
+  local rel target real_target real_file backed_up=0
 
   while IFS= read -r -d '' file; do
     rel="${file#"$pkg_dir"/}"
     target="$TARGET_DIR/$rel"
+    real_file="$(realpath -m "$file")"
 
-    if [ -e "$target" ] && [ ! -L "$target" ]; then
+    if [ -L "$target" ] && [ ! -e "$target" ]; then
+      # broken symlink -- nothing to preserve, just remove it
+      rm -f "$target"
+      continue
+    fi
+
+    if [ -e "$target" ]; then
+      real_target="$(realpath -m "$target")"
+      if [ "$real_target" = "$real_file" ]; then
+        # already correctly stowed, possibly via a tree-folded parent
+        # symlink -- do NOT touch it, or we'd move the repo's own file
+        continue
+      fi
       mkdir -p "$(dirname "$BACKUP_DIR/$rel")"
       mv "$target" "$BACKUP_DIR/$rel"
       echo "    backed up: $rel"
-      backed_up=1
-    elif [ -L "$target" ] && [ "$(readlink -f "$target")" != "$(readlink -f "$file")" ]; then
-      mkdir -p "$(dirname "$BACKUP_DIR/$rel")"
-      mv "$target" "$BACKUP_DIR/$rel"
-      echo "    backed up (stale symlink): $rel"
       backed_up=1
     fi
   done < <(find "$pkg_dir" -type f -print0)
@@ -66,6 +72,12 @@ done
 
 if [ -d "$BACKUP_DIR" ]; then
   echo "==> Pre-existing configs backed up to: $BACKUP_DIR"
+fi
+
+ZSH_PATH="$(command -v zsh)"
+if [ -n "$ZSH_PATH" ] && [ "$(getent passwd "$USER" | cut -d: -f7)" != "$ZSH_PATH" ]; then
+  echo "==> Setting default shell to zsh (you'll be asked for your password)"
+  chsh -s "$ZSH_PATH"
 fi
 
 echo "==> Done. Log out/in (or restart Hyprland) for all changes to take effect."
