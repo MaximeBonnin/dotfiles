@@ -61,7 +61,7 @@
                 },
                 {
                     "label": "",
-                    "command": "swaync-client -cp ; sh -c 'command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit'"
+                    "command": "swaync-client -cp; command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"
                 }
             ]
         }
