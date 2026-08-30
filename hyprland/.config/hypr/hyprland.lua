@@ -5,6 +5,7 @@
 -- You can split this configuration into multiple files
 -- Create your files separately and then require them like this:
 -- require("myColors")
+local music = require("music")
 
 
 ------------------
@@ -256,6 +257,8 @@ hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+
+hl.bind(mainMod .. " + V", music.make_music)
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
