@@ -22,7 +22,9 @@ TERMINAL_EDITOR=(
   neovim
   tmux           # required by vim-test/vimux and vim-tmux-navigator
   lazygit        # used by snacks.nvim's <leader>lg/<leader>gl
+  fzf            # shell integration + fuzzy history/file search in .zshrc
   ripgrep        # used by telescope/snacks picker
+  bat            # syntax-highlighted preview for fzf (fzf-preview.sh)
   fd
 )
 

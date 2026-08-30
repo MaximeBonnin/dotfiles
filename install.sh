@@ -11,6 +11,7 @@ BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
 PACKAGES=(
   alacritty
   backgrounds
+  fzf
   gtk
   hyprland
   hyprpaper
@@ -21,6 +22,7 @@ PACKAGES=(
   waybar
   wofi
   wpaperd
+  z
   zshrc
 )
 
