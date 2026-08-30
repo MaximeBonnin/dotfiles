@@ -7,6 +7,7 @@ set -euo pipefail
 
 # --- core / shell tooling -------------------------------------------------
 CORE=(
+  cachyos-zsh-config  # sourced by .zshrc; pulls in zsh-theme-powerlevel10k
   git
   github-cli     # gh
   stow
