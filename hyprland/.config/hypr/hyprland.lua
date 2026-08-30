@@ -32,7 +32,7 @@ local menu        = "wofi"
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar & hyprpaper")
+    hl.exec_cmd("waybar & wpaperd")
     hl.exec_cmd("swaync")
     hl.exec_cmd("~/.local/bin/bt-autoconnect")
     hl.exec_cmd(terminal .. " -e ~/projects/mindful/mindful")
